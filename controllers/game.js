@@ -2,7 +2,7 @@
 {
 	'use strict';
 	
-	//Define Home controller.
+	//Define Game controller.
 	window._controller	=	function($controllerProvider)
 	{
 		$controllerProvider.register('gameCtrl', ['$scope', 'PokeApi', function($scope, PokeApi)
