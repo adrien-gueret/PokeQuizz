@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="PokeQuizz">
+	<head>
+		<title>PokeQuizz</title>
+		<meta charset="utf-8" />
+		<base href="/PokeQuizz/">
+		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		<link rel="shortcut icon" href="./images/favicon.ico" />
+		
+		<!-- Bower vendors -->
+		<script src="./bower_components/angular/angular.js"></script>
+		<script src="./bower_components/angular-route/angular-route.js"></script>
+		
+		<!-- Directives & services -->
+		<script src="./directives/pokemon/component.js"></script>
+		<link rel="stylesheet" type="text/css" href="./directives/pokemon/style.css" />
+		
+		<script src="./services/PokeApi.js"></script>
+		
+		<!-- Define PokeQuizz app -->
+		<script src="./app.js"></script>
+		
+		<!-- No controllers here, they'll be autoloaded -->
+	</head>
+	<body>
+	
+		<div ng-view></div>
+	
+	</body>
+</html>

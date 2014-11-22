@@ -1,0 +1,24 @@
+<pokemon
+		ng-show="currentPokemon.name"
+		ng-click="loadPokemon()"
+		pokemon="currentPokemon"></pokemon>
+		
+<p ng-show="currentPokemon.name">
+	<span ng-show="currentPokemon.types.length === 1">What is the type of <b>{{currentPokemon.name}}</b> ?</span>
+	<span ng-show="currentPokemon.types.length === 2"><b>{{currentPokemon.name}}</b> is a <b>{{currentPokemon.types[0].name}}</b> Pokémon, but he has another type! Which one?</span>
+</p>
+		
+<p>
+	<span
+		ng-class="{disabled: currentPokemon.types.length > 1 && type.toLowerCase() === currentPokemon.types[0].name}"
+		ng-repeat="type in types"
+		ng-click="checkType(type.toLowerCase())"
+		class="btn type {{type | lowercase}}">{{type}}</span>
+</p>
+		
+		
+<span ng-repeat="i in [0,0,0,0,0,0,0,0,0,0] track by $index" class="unknown_icon" ng-class="{
+	win: answers[$index] === 1,
+	loose: answers[$index] === 0,
+	pending: answers[$index] === undefined
+}"></span>

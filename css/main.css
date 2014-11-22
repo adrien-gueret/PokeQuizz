@@ -1,0 +1,228 @@
+/*== Global ==*/
+html, body
+{
+	background: #e3e3e3;
+	color: #333;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.unknown_icon {
+	display: inline-block;
+	margin: 3px;
+	width: 15px;
+	height: 16px;
+	background-image: url(../images/unknown_icons.png);
+	background-repeat: no-repeat;
+}
+
+.unknown_icon.pending {
+	background-position: 0;
+	-webkit-animation: iconPending .8s steps(2) infinite;
+	-moz-animation: iconPending .8s steps(2) infinite;
+	-o-animation: iconPending .8s steps(2) infinite;
+	-ms-animation: iconPending .8s steps(2) infinite;
+	animation: iconPending .8s steps(2) infinite;
+}
+
+.unknown_icon.win {
+	background-position: -30px;
+	-webkit-animation: iconWin .8s steps(2) infinite;
+	-moz-animation: iconWin .8s steps(2) infinite;
+	-o-animation: iconWin .8s steps(2) infinite;
+	-ms-animation: iconWin .8s steps(2) infinite;
+	animation: iconWin .8s steps(2) infinite;
+}
+
+.unknown_icon.loose {
+	background-position: -60px;
+	-webkit-animation: iconLoose .8s steps(2) infinite;
+	-moz-animation: iconLoose .8s steps(2) infinite;
+	-o-animation: iconLoose .8s steps(2) infinite;
+	-ms-animation: iconLoose .8s steps(2) infinite;
+	animation: iconLoose .8s steps(2) infinite;
+}
+
+/*Buttons*/
+.btn {
+	display: inline-block;
+	margin: 3px;
+	cursor: pointer;
+	padding: 5px;
+	text-align: center;
+	background-color: #c9c9c9;
+	border-radius: 5px;
+	border-width: 2px;
+	border-color: transparent #a9a9a9 #a9a9a9 transparent;
+	border-style:solid;
+}
+
+.btn.disabled {
+	cursor: default;
+	opacity: .2;
+}
+
+.btn:hover {background-color: #b9b9b9;}
+
+.btn:active {border-color: #a9a9a9 transparent transparent #a9a9a9;}
+
+/*Types buttons*/
+.btn.type {
+	text-transform: uppercase;
+	color: #fff;
+	font-family: Sans-serif;
+	text-shadow: 0 1px #525252;
+}
+
+.btn.type.normal {
+	background-color: #ada594;
+	border-color: transparent #525252 #525252 transparent;
+}
+.btn.type.normal:hover {background-color: #9f9682;}
+.btn.type.normal:active {border-color: #525252 transparent transparent #525252;}
+
+.btn.type.fighting {
+	background-color: #a55138;
+	border-color: transparent #4a3931 #4a3931 transparent;
+}
+.btn.type.fighting:hover {background-color: #8d4630;}
+.btn.type.fighting:active {border-color: #4a3931 transparent transparent #4a3931;}
+
+.btn.type.flying {
+	background-color: #9bacf7;
+	border-color: transparent #425294 #425294 transparent;
+}
+.btn.type.flying:hover {background-color: #7d93f4;}
+.btn.type.flying:active {border-color: #425294 transparent transparent #425294;}
+
+.btn.type.poison {
+	background-color: #b559a5;
+	border-color: transparent #493952 #493952 transparent;
+}
+.btn.type.poison:hover {background-color: #a44993;}
+.btn.type.poison:active {border-color: #493952 transparent transparent #493952;}
+
+.btn.type.ground {
+	background-color: #d6b55a;
+	border-color: transparent #735217 #735217 transparent;
+}
+.btn.type.ground:hover {background-color: #cfa940;}
+.btn.type.ground:active {border-color: #735217 transparent transparent #735217;}
+
+.btn.type.rock {
+	background-color: #bda559;
+	border-color: transparent #735217 #735217 transparent;
+}
+.btn.type.rock:hover {background-color: #af9546;}
+.btn.type.rock:active {border-color: #735217 transparent transparent #735217;}
+
+.btn.type.bug {
+	background-color: #adbd20;
+	border-color: transparent #426b39 #426b39 transparent;
+}
+.btn.type.bug:hover {background-color: #94a11c;}
+.btn.type.bug:active {border-color: #426b39 transparent transparent #426b39;}
+
+.btn.type.ghost {
+	background-color: #6363b5;
+	border-color: transparent #493952 #493952 transparent;
+}
+.btn.type.ghost:hover {background-color: #4f4fa8;}
+.btn.type.ghost:active {border-color: #493952 transparent transparent #493952;}
+
+.btn.type.steel {
+	background-color: #acacc6;
+	border-color: transparent #525252 #525252 transparent;
+}
+.btn.type.steel:hover {background-color: #9999b8;}
+.btn.type.steel:active {border-color: #525252 transparent transparent #525252;}
+
+.btn.type.fire {
+	background-color: #f75231;
+	border-color: transparent #732107 #732107 transparent;
+}
+.btn.type.fire:hover {background-color: #f53812;}
+.btn.type.fire:active {border-color: #732107 transparent transparent #732107;}
+
+.btn.type.water {
+	background-color: #399cff;
+	border-color: transparent #425294 #425294 transparent;
+}
+.btn.type.water:hover {background-color: #198cff;}
+.btn.type.water:active {border-color: #425294 transparent transparent #425294;}
+
+.btn.type.grass {
+	background-color: #7bce52;
+	border-color: transparent #426b39 #426b39 transparent;
+}
+.btn.type.grass:hover {background-color: #68c639;}
+.btn.type.grass:active {border-color: #426b39 transparent transparent #426b39;}
+
+.btn.type.electric {
+	background-color: #ffc631;
+	border-color: transparent #735217 #735217 transparent;
+}
+.btn.type.electric:hover {background-color: #ffbb11;}
+.btn.type.electric:active {border-color: #735217 transparent transparent #735217;}
+
+.btn.type.ice {
+	background-color: #59cde7;
+	border-color: transparent #425294 #425294 transparent;
+}
+.btn.type.ice:hover {background-color: #3dc4e2;}
+.btn.type.ice:active {border-color: #425294 transparent transparent #425294;}
+
+.btn.type.psychic {
+	background-color: #ff73a4;
+	border-color: transparent #6b3939 #6b3939 transparent;
+}
+.btn.type.psychic:hover {background-color: #ff538f;}
+.btn.type.psychic:active {border-color: #6b3939 transparent transparent #6b3939;}
+
+.btn.type.dragon {
+	background-color: #7b63e7;
+	border-color: transparent #4a3894 #4a3894 transparent;
+}
+.btn.type.dragon:hover {background-color: #6347e2;}
+.btn.type.dragon:active {border-color: #4a3894 transparent transparent #4a3894;}
+
+.btn.type.dark {
+	background-color: #735a4a;
+	border-color: transparent #4a3931 #4a3931 transparent;
+}
+.btn.type.dark:hover {background-color: #604b3d;}
+.btn.type.dark:active {border-color: #4a3931 transparent transparent #4a3931;}
+
+.btn.type.fairy {
+	background-color: #f793ff;
+	border-color: transparent #6b3939 #6b3939 transparent;
+}
+.btn.type.fairy:hover {background-color: #f573ff;}
+.btn.type.fairy:active {border-color: #6b3939 transparent transparent #6b3939;}
+
+/*Overwritte default style for <pokemon> tags*/
+pokemon {
+	display: block;
+	margin: auto;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+}
+
+/*All animations*/
+@-webkit-keyframes iconPending {100% { background-position: -30px; }}
+@-webkit-keyframes iconWin {100% { background-position: -60px; }}
+@-webkit-keyframes iconLoose {100% { background-position: -90px; }}
+@-moz-keyframes iconPending {100% { background-position: -30px; }}
+@-moz-keyframes iconWin {100% { background-position: -60px; }}
+@-moz-keyframes iconLoose {100% { background-position: -90px; }}
+@-o-keyframes iconPending {100% { background-position: -30px; }}
+@-o-keyframes iconWin {100% { background-position: -60px; }}
+@-o-keyframes iconLoose {100% { background-position: -90px; }}
+@-ms-keyframes iconPending {100% { background-position: -30px; }}
+@-ms-keyframes iconWin {100% { background-position: -60px; }}
+@-ms-keyframes iconLoose {100% { background-position: -90px; }}
+@keyframes iconPending {100% { background-position: -30px; }}
+@keyframes iconWin {100% { background-position: -60px; }}
+@keyframes iconLoose {100% { background-position: -90px; }}

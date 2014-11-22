@@ -1,0 +1,13 @@
+{
+  "name": "pokequizz",
+  "description": "A Pokemon quizz built with AngularJS and using PokeApi.co",
+  "version": "0.0.1",
+  "homepage": "",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "angular": "~1.2.0",
+    "angular-mocks": "~1.2.0",
+    "angular-route": "~1.2.0"
+  }
+}
