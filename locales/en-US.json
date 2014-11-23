@@ -5,12 +5,27 @@
 	"pokeapi_thanks": "Thanks to <a href=\"http://pokeapi.co/\">PokeApi.co</a>, we can present you around <b>%totalPokemons</b> Pokémons.",
 	"welcome_second_subtitle": "Will you be able to find their types?",
 	"play": "Play!",
+	"replay": "Replay!",
 	
 	"one_type_question": "What is the type of <b>%pokemonName</b>?",
 	"two_types_question": "<b>%pokemonName</b> is a <b>%pokemonType</b> Pokémon, but he has another type! Which one?",
 	"pokemons_names_not_translated": "Pokémons names are not translated and stay in english: there are too much ones and this is too time-consumming, sorry for that... :(",
 	
 	"loading": "Loading...",
+	"finish": "Finish!",
+	
+	"score_sentence": "Your score is <b>%percent%</b>",
+	"score_100": "You are the really best, well done!",
+	"score_90": "Almost perfect, maybe a miss click?",
+	"score_80": "You're really good, but you certainly can do better.",
+	"score_70": "You're one of those people who consider only first generation, aren't you?",
+	"score_60": "I swear that the strange monster who doesn't ring a bell was not a Digimon!",
+	"score_50": "You are average. Neither very good nor very bad. You are just average. You aren't very funny...",
+	"score_40": "",
+	"score_30": "Clicking randomly on buttons is not the best solution, you know...",
+	"score_20": "You were not very lucky. Or you suck. Why not both?",
+	"score_10": "I assume your right answer was not expected.",
+	"score_0": "Do you know at least what is a Pokémon ?",
 	
 	"normal": "normal",
 	"fighting": "fighting",

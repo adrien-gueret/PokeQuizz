@@ -11,7 +11,7 @@
 	<button
 		i18n="{{type}}"
 		ng-repeat="type in types"
-		ng-click="checkType(type)"
+		ng-click="checkType(type, $event)"
 		ng-disabled="currentPokemon.types.length > 1 && type.toLowerCase() === currentPokemon.types[0].name"
 		class="btn type {{type}}"></button>
 </p>

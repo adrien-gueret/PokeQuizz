@@ -19,7 +19,7 @@
 			'$controllerProvider',
 			function($routeProvider, $controllerProvider)
 			{
-				var routes	=	['home', 'game'];
+				var routes	=	['home', 'game', 'end'];
 				
 				for(var i = 0, l = routes.length; i < l; i++)
 				{

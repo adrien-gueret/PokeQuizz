@@ -2,14 +2,19 @@
 {
 	'use strict';
 	
+	var TOTAL_QUESTIONS	=	10;
+	
 	//Define Game controller.
 	window._controller	=	function($controllerProvider)
 	{
-		$controllerProvider.register('gameCtrl', ['$scope', '$rootScope', 'PokeApi', '$i18n', function($scope, $rootScope, PokeApi, $i18n)
+		$controllerProvider.register('gameCtrl', ['$scope', '$rootScope', '$timeout', '$location', 'PokeApi', '$i18n', function($scope, $rootScope, $timeout, $location, PokeApi, $i18n)
 		{
+			$scope.busy					=	false;
 			$scope.currentPokemon	=	{};
 			$scope.answers			=	[];
 			$scope.types				=	[];
+			
+			$scope.$parent.user.score	=	0;
 			
 			function updateTranslatedType()
 			{
@@ -45,21 +50,51 @@
 					{
 						$scope.currentPokemon.image	=	sprite.image;
 					});
+					
+					$scope.busy	=	false;
 				});
 			};
 			
-			$scope.checkType	=	function(type)
+			$scope.checkType	=	function(type, $event)
 			{
-				var result;
+				$event.preventDefault();
+				$event.stopPropagation();
+				
+				if($scope.busy)
+					return;
+					
+				$scope.busy	=	true;
+				
+				var	result,
+						highlight_class,
+						$element	=	angular.element($event.target);
 
 				if($scope.currentPokemon.types.length === 1)
 					result	=	$scope.currentPokemon.types[0].name.toLowerCase() === type;
 				else
 					result	=	$scope.currentPokemon.types[1].name.toLowerCase() === type;
 					
+				if(result)
+					$scope.$parent.user.score++;
+					
 				$scope.answers.push(result ? 1 : 0);
 				
-				$scope.loadPokemon();
+				highlight_class	=	'highlight_' + (result ? 'success' : 'wrong');
+				
+				$element.addClass(highlight_class);
+				
+				$timeout(function()
+				{
+					$element.removeClass(highlight_class);
+					
+					if($scope.answers.length >= TOTAL_QUESTIONS)
+						$location.path('/end')
+					
+				}, 1000);
+				
+				if($scope.answers.length < TOTAL_QUESTIONS)
+					$scope.loadPokemon();
+				
 			};
 			
 			PokeApi.types(function(types)

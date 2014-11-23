@@ -98,6 +98,7 @@ a:hover {
 .pikachu_icon.loose {background-position: right;}
 
 /*Buttons*/
+a.btn, a.btn:hover {text-decoration: none;}
 .btn {
 	display: inline-block;
 	margin: 3px;
@@ -117,7 +118,6 @@ a:hover {
 }
 
 .btn:hover {background-color: #b9b9b9;}
-
 .btn:active {border-color: #a9a9a9 transparent transparent #a9a9a9;}
 
 /*Types buttons*/
@@ -126,7 +126,11 @@ a:hover {
 	color: #fff;
 	font-family: Sans-serif;
 	text-shadow: 0 1px #525252;
+	transition: box-shadow 100ms, color 100ms;
 }
+
+.btn.type.highlight_success{box-shadow: 0 0 20px #0f0; color: #0f0;}
+.btn.type.highlight_wrong{box-shadow: 0 0 20px #f00; color: #f00;}
 
 .btn.type.normal {
 	background-color: #ada594;
