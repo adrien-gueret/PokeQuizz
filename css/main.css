@@ -93,7 +93,8 @@ a:hover {
 	border-radius: 2px;
 }
 
-.pikachu_icon.pending {background-position: left;}
+.pikachu_icon.pending {background-position: left; opacity: .2;}
+.current .pikachu_icon.pending {opacity: 1;}
 .pikachu_icon.win {background-position: center;}
 .pikachu_icon.loose {background-position: right;}
 
