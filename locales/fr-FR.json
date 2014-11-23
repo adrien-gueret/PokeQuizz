@@ -1,0 +1,30 @@
+{
+	"welcome_title": "Bienvenue au PokeQuizz !",
+	"welcome_first_subtitle_1": "Connaissez-vous tous les Pokémons ?",
+	"welcome_first_subtitle_2": "Au moins leurs types, non ?",
+	"pokeapi_thanks": "Grâce à <a href=\"http://pokeapi.co/\">PokeApi.co</a>, nous pouvons vous présenter environ <b>%totalPokemons</b> Pokémons.",
+	"welcome_second_subtitle": "Parviendrez-vous à trouver leurs types ?",
+	"play": "Jouer !",
+	
+	"one_type_question": "Quel est le type de <b>%pokemonName</b> ?",
+	"two_types_question": "<b>%pokemonName</b> est un Pokémon <b>%pokemonType</b>, mais il possède un autre type ! Lequel ?",
+	
+	"normal": "normal",
+	"fighting": "combat",
+	"flying": "vol",
+	"poison": "poison",
+	"ground": "sol",
+	"rock": "roche",
+	"bug": "insecte",
+	"ghost": "spectre",
+	"steel": "acier",
+	"fire": "feu",
+	"water": "eau",
+	"grass": "plante",
+	"electric": "électrik",
+	"ice": "glace",
+	"dragon": "dragon",
+	"dark": "ténèbres",
+	"fairy": "fée",
+	"psychic": "psy"
+}

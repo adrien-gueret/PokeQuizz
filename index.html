@@ -10,22 +10,28 @@
 		<script src="./bower_components/angular/angular.js"></script>
 		<script src="./bower_components/angular-route/angular-route.js"></script>
 		
-		<!-- Directives, filters & services -->
-		<script src="./directives/pokemon/component.js"></script>
-		<script src="./filters/PikachuIcon.js"></script>
-		<link rel="stylesheet" type="text/css" href="./directives/pokemon/style.css" />
+		<!-- Modules -->
+		<script src="./modules/i18n.js"></script>
+		<script src="./modules/Pokemon.js"></script>
+		<link rel="stylesheet" type="text/css" href="./modules/Pokemon/directives/pokemon.css" />
 		
-		<script src="./services/PokeApi.js"></script>
+		<script src="./modules/PokeApi.js"></script>
 		
 		<!-- Define PokeQuizz app -->
 		<script src="./app.js"></script>
 		
-		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		<!-- Include just one controller: it configures the whole app (like i18n). Other controllers are auto-loaded -->
+		<script src="./controllers/main.js"></script>
 		
-		<!-- No controllers here, they'll be autoloaded -->
+		<link rel="stylesheet" type="text/css" href="./css/main.css" />
 	</head>
-	<body>
-	
+	<body ng-controller="mainCtrl">
+		
+		<select ng-model="user.locale">
+			<option>fr-FR</option>
+			<option>en-US</option>
+		</select>
+		
 		<div ng-view class="mainContainer"></div>
 	
 	</body>

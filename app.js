@@ -3,7 +3,7 @@
 {
 	'use strict';
 	
-	var	PokeQuizz			=	angular.module('PokeQuizz', ['ngRoute', 'PokeApi', 'Pokemon', 'PikachuFilter']),
+	var	PokeQuizz			=	angular.module('PokeQuizz', ['ngRoute', 'i18n', 'PokeApi', 'Pokemon']),
 			loadedControllers	=	{};
 
 	PokeQuizz
@@ -62,7 +62,6 @@
 					
 				$routeProvider.otherwise({redirectTo: '/home'});
 			}]);
-	PokeQuizz.TEST	=	'TEST';
 	
 	window.PokeQuizz	=	PokeQuizz;
 	

@@ -5,11 +5,24 @@
 	//Define Game controller.
 	window._controller	=	function($controllerProvider)
 	{
-		$controllerProvider.register('gameCtrl', ['$scope', 'PokeApi', function($scope, PokeApi)
+		$controllerProvider.register('gameCtrl', ['$scope', '$rootScope', 'PokeApi', '$i18n', function($scope, $rootScope, PokeApi, $i18n)
 		{
 			$scope.currentPokemon	=	{};
 			$scope.answers			=	[];
 			$scope.types				=	[];
+			
+			function updateTranslatedType()
+			{
+				if($scope.currentPokemon.types.length > 1)
+					{
+						$i18n.loadLocale(function()
+						{
+							$scope.currentPokemon.firstTypeTranslated	=	$i18n.get($scope.currentPokemon.types[0].name);
+						});
+					}
+			}
+			
+			$rootScope.$on('i18nLocaleChange', updateTranslatedType);
 			
 			$scope.loadPokemon	=	function()
 			{
@@ -24,6 +37,7 @@
 					
 					$scope.currentPokemon.name	=	pokemon.name;
 					$scope.currentPokemon.types	=	pokemon.types;
+					updateTranslatedType();
 			
 					PokeApi.get(pokemon.sprites[0].resource_uri, function(sprite)
 					{
@@ -51,7 +65,7 @@
 				for(var i = 0, l = types.length; i < l; i++)
 				{
 					if(types[i].id < 1000) //Big IDs from API are "special" types like "Unknown" or "Shadow": we don't want them!
-						$scope.types.push(types[i].name);
+						$scope.types.push(types[i].name.toLowerCase());
 				}
 			});
 			

@@ -3,18 +3,17 @@
 		pokemon="currentPokemon"></pokemon>
 		
 <p ng-show="currentPokemon.name">
-	<span ng-show="currentPokemon.types.length === 1">What is the type of <b>{{currentPokemon.name}}</b> ?</span>
-	<span ng-show="currentPokemon.types.length === 2"><b>{{currentPokemon.name}}</b> is a <b>{{currentPokemon.types[0].name}}</b> Pokémon, but he has another type! Which one?</span>
+	<span ng-show="currentPokemon.types.length === 1" i18n="one_type_question" t-pokemonName="{{currentPokemon.name}}"></span>
+	<span ng-show="currentPokemon.types.length === 2" i18n="two_types_question" t-pokemonName="{{currentPokemon.name}}" t-pokemonType="{{currentPokemon.firstTypeTranslated}}"></span>
 </p>
 		
 <p>
-	<input
-		type="button"
+	<button
+		i18n="{{type}}"
 		ng-repeat="type in types"
-		ng-click="checkType(type.toLowerCase())"
+		ng-click="checkType(type)"
 		ng-disabled="currentPokemon.types.length > 1 && type.toLowerCase() === currentPokemon.types[0].name"
-		value="{{type}}"
-		class="btn type {{type | lowercase}}" />
+		class="btn type {{type}}"></button>
 </p>
 		
 		

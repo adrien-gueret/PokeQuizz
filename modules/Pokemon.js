@@ -1,7 +1,19 @@
 (function(angular, undefined)
 {
 	angular
-		.module('PikachuFilter', [])
+		.module('Pokemon', [])
+		
+		.directive('pokemon', function()
+		{
+			return {
+				restrict: 'E',
+				scope: {
+					pokemon:	'='
+				},
+				templateUrl:	'./modules/Pokemon/directives/pokemon.html'
+			};
+		})
+		
 		.filter('pikachuIcon', ['$sce', function($sce)
 		{
 			return function(input)
