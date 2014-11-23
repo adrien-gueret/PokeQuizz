@@ -27,10 +27,16 @@
 	</head>
 	<body ng-controller="mainCtrl">
 		
-		<select ng-model="user.locale">
-			<option>fr-FR</option>
-			<option>en-US</option>
-		</select>
+		<p id="localesContainer">
+			<span
+				ng-click="user.locale = 'fr-FR'"
+				class="flag fr-FR"
+				ng-class="{active: user.locale === 'fr-FR'}"></span>
+			<span
+				ng-click="user.locale = 'en-US'"
+				class="flag en-US"
+				ng-class="{active: user.locale === 'en-US'}"></span>
+		</p>
 		
 		<div ng-view class="mainContainer"></div>
 	

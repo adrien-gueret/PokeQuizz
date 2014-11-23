@@ -9,6 +9,11 @@
 		
 	window.PokeQuizz.controller('mainCtrl', ['$scope', '$i18n', function($scope, $i18n)
 	{
+		function updateLocale()
+		{
+			$i18n.setLocale($scope.user.locale);
+		}
+		
 		//Check user lang and apply correpsonding i18n settings
 		$scope.user	=	{
 			locale:	window.navigator.userLanguage || window.navigator.language
@@ -18,10 +23,10 @@
 			$scope.user.locale	=	SUPPORTED_LANGS[0];
 		
 		$i18n.locales_path	=	'./locales';
-		$i18n.setLocale($scope.user.locale);
+		updateLocale();
 		
 		//Update i18n settings if user changes his locale
-		$scope.$watch('user.locale', function (){$i18n.setLocale($scope.user.locale);});
+		$scope.$watch('user.locale', updateLocale);
 	}]);
 	
 })(window);

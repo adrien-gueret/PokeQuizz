@@ -21,6 +21,28 @@ body {
 	padding: 10%;
 }
 
+#localesContainer {
+	position: fixed;
+	bottom: 5px;
+	left: 15px;
+}
+
+.flag {
+	cursor: pointer;
+	display: inline-block;
+	width: 23px;
+	height: 22px;
+	background-image: url(../images/flags_icons.png);
+	background-repeat: no-repeat;
+}
+
+.flag.active {cursor: default;}
+
+.flag.fr-FR {background-position: left top;}
+.flag.fr-FR.active {background-position: left bottom;}
+.flag.en-US {background-position: right top;}
+.flag.en-US.active {background-position: right bottom;}
+
 /*Main container*/
 .mainContainer {
 	width: 40vw;
