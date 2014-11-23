@@ -25,6 +25,9 @@ body {
 	position: fixed;
 	bottom: 5px;
 	left: 15px;
+	color: #d7b66f;
+	font-style: italic;
+	font-size: .8em;
 }
 
 .flag {
