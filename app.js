@@ -3,7 +3,7 @@
 {
 	'use strict';
 	
-	var	PokeQuizz			=	angular.module('PokeQuizz', ['ngRoute', 'PokeApi', 'Pokemon']),
+	var	PokeQuizz			=	angular.module('PokeQuizz', ['ngRoute', 'PokeApi', 'Pokemon', 'PikachuFilter']),
 			loadedControllers	=	{};
 
 	PokeQuizz

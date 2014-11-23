@@ -7,9 +7,8 @@
 			return {
 				restrict: 'E',
 				scope: {
-					internalPokemon:	'=pokemon'
+					pokemon:	'='
 				},
-
 				templateUrl:	'./directives/pokemon/template.html'
 			};
 		});

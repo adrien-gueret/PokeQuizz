@@ -1,6 +1,5 @@
 <pokemon
 		ng-show="currentPokemon.name"
-		ng-click="loadPokemon()"
 		pokemon="currentPokemon"></pokemon>
 		
 <p ng-show="currentPokemon.name">
@@ -19,8 +18,4 @@
 </p>
 		
 		
-<span ng-repeat="i in [0,0,0,0,0,0,0,0,0,0] track by $index" class="unknown_icon" ng-class="{
-	win: answers[$index] === 1,
-	loose: answers[$index] === 0,
-	pending: answers[$index] === undefined
-}"></span>
+<span ng-repeat="i in [0,0,0,0,0,0,0,0,0,0] track by $index" ng-bind-html="answers[$index] | pikachuIcon"></span>

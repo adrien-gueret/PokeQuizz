@@ -21,6 +21,19 @@ body {
 	padding: 10%;
 }
 
+/*Main container*/
+.mainContainer {
+	width: 40vw;
+	text-align: center;
+}
+
+@media (max-width: 1200px)
+{
+	.mainContainer {
+		margin: auto;
+	}
+}
+
 h1 {
 	padding: 5px;
 	padding-right: 30px;
@@ -39,41 +52,20 @@ a:hover {
 	text-decoration: underline;
 }
 
-.unknown_icon {
+.pikachu_icon {
 	display: inline-block;
 	margin: 3px;
-	width: 15px;
-	height: 16px;
-	background-image: url(../images/unknown_icons.png);
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/pikachu_icons.png);
 	background-repeat: no-repeat;
+	border: 1px solid #000;
+	border-radius: 2px;
 }
 
-.unknown_icon.pending {
-	background-position: 0;
-	-webkit-animation: iconPending .8s steps(2) infinite;
-	-moz-animation: iconPending .8s steps(2) infinite;
-	-o-animation: iconPending .8s steps(2) infinite;
-	-ms-animation: iconPending .8s steps(2) infinite;
-	animation: iconPending .8s steps(2) infinite;
-}
-
-.unknown_icon.win {
-	background-position: -30px;
-	-webkit-animation: iconWin .8s steps(2) infinite;
-	-moz-animation: iconWin .8s steps(2) infinite;
-	-o-animation: iconWin .8s steps(2) infinite;
-	-ms-animation: iconWin .8s steps(2) infinite;
-	animation: iconWin .8s steps(2) infinite;
-}
-
-.unknown_icon.loose {
-	background-position: -60px;
-	-webkit-animation: iconLoose .8s steps(2) infinite;
-	-moz-animation: iconLoose .8s steps(2) infinite;
-	-o-animation: iconLoose .8s steps(2) infinite;
-	-ms-animation: iconLoose .8s steps(2) infinite;
-	animation: iconLoose .8s steps(2) infinite;
-}
+.pikachu_icon.pending {background-position: left;}
+.pikachu_icon.win {background-position: center;}
+.pikachu_icon.loose {background-position: right;}
 
 /*Buttons*/
 .btn {
@@ -236,24 +228,14 @@ a:hover {
 pokemon {
 	display: block;
 	margin: auto;
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: 282px;
 	overflow: hidden;
+	background-image: url(../images/pokedex_screen.png);
+	background-color: transparent;
+	border: 0;
 }
 
-/*All animations*/
-@-webkit-keyframes iconPending {100% { background-position: -30px; }}
-@-webkit-keyframes iconWin {100% { background-position: -60px; }}
-@-webkit-keyframes iconLoose {100% { background-position: -90px; }}
-@-moz-keyframes iconPending {100% { background-position: -30px; }}
-@-moz-keyframes iconWin {100% { background-position: -60px; }}
-@-moz-keyframes iconLoose {100% { background-position: -90px; }}
-@-o-keyframes iconPending {100% { background-position: -30px; }}
-@-o-keyframes iconWin {100% { background-position: -60px; }}
-@-o-keyframes iconLoose {100% { background-position: -90px; }}
-@-ms-keyframes iconPending {100% { background-position: -30px; }}
-@-ms-keyframes iconWin {100% { background-position: -60px; }}
-@-ms-keyframes iconLoose {100% { background-position: -90px; }}
-@keyframes iconPending {100% { background-position: -30px; }}
-@keyframes iconWin {100% { background-position: -60px; }}
-@keyframes iconLoose {100% { background-position: -90px; }}
+pokemon figcaption {
+	margin-top: 28px;
+}
