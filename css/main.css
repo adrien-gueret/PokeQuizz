@@ -269,3 +269,7 @@ pokemon {
 pokemon figcaption {
 	margin-top: 28px;
 }
+
+pokemon figure.loading img {
+	margin-top: 20%;
+}

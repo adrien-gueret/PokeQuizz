@@ -10,6 +10,8 @@
 	"two_types_question": "<b>%pokemonName</b> is a <b>%pokemonType</b> Pokémon, but he has another type! Which one?",
 	"pokemons_names_not_translated": "Pokémons names are not translated and stay in english: there are too much ones and this is too time-consumming, sorry for that... :(",
 	
+	"loading": "Loading...",
+	
 	"normal": "normal",
 	"fighting": "fighting",
 	"flying": "flying",

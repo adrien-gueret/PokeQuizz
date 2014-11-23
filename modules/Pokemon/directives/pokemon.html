@@ -1,4 +1,4 @@
-<figure>
-	<figcaption>{{pokemon.name}}</figcaption>
-	<img ng-show="pokemon.image.length" ng-src="//pokeapi.co{{pokemon.image}}" />
+<figure ng-class="{loading: ! imageLoaded}">
+	<figcaption>{{internalPokemon.name}}</figcaption>
+	<img async-loading ng-src="{{internalPokemon.image}}" />
 </figure>

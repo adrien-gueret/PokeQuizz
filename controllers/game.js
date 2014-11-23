@@ -25,7 +25,9 @@
 			$rootScope.$on('i18nLocaleChange', updateTranslatedType);
 			
 			$scope.loadPokemon	=	function()
-			{
+			{				
+				$scope.currentPokemon.image	=	null;
+				
 				PokeApi.randomPokemon(function(pokemon)
 				{			
 					//Some Pokemons from API does not have any sprites: we have to skip them!
@@ -49,7 +51,7 @@
 			$scope.checkType	=	function(type)
 			{
 				var result;
-								
+
 				if($scope.currentPokemon.types.length === 1)
 					result	=	$scope.currentPokemon.types[0].name.toLowerCase() === type;
 				else

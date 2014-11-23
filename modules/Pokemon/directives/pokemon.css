@@ -12,10 +12,6 @@ pokemon figure {
 	margin: 0;
 }
 
-pokemon figure.loading * {
-	display: none;
-}
-
 pokemon figcaption {
 	margin-top: 3px;
 	margin-bottom: 3px;
