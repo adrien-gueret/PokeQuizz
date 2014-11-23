@@ -1,0 +1,21 @@
+<pokemon
+		ng-show="currentPokemon.name"
+		pokemon="currentPokemon"></pokemon>
+
+<span ng-repeat="i in [0,0,0,0,0,0,0,0,0,0] track by $index" ng-bind-html="answers[$index] | pikachuIcon" ng-class="{current: answers.length === $index}"></span>
+		
+<p ng-show="currentPokemon.name">
+	<span ng-show="currentPokemon.types.length === 1" i18n="one_type_question" t-pokemonName="{{currentPokemon.name}}"></span>
+	<span ng-show="currentPokemon.types.length === 2" i18n="two_types_question" t-pokemonName="{{currentPokemon.name}}" t-pokemonType="{{currentPokemon.firstTypeTranslated}}"></span>
+</p>
+		
+<p>
+	<button
+		i18n="{{type}}"
+		ng-repeat="type in types"
+		ng-click="checkType(type, $event)"
+		ng-disabled="currentPokemon.types.length > 1 && type.toLowerCase() === currentPokemon.types[0].name"
+		class="btn type {{type}}"></button>
+</p>
+		
+		

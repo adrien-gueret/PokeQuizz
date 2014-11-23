@@ -1,0 +1,19 @@
+pokemon {
+	display: inline-block;
+	min-width: 150px;
+	min-height: 150px;
+	border: 1px solid #000;
+	border-radius: 8px;
+	background-color: #f5f5f5;
+	text-align: center;
+}
+
+pokemon figure {
+	margin: 0;
+}
+
+pokemon figcaption {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	font-weight: bold;
+}
