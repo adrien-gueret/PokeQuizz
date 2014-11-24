@@ -3,7 +3,7 @@
 	'use strict';
 	
 	//Define End controller.
-	window._controller	=	function($controllerProvider)
+	window._controller_endCtrl	=	function($controllerProvider)
 	{
 		$controllerProvider.register('endCtrl', ['$scope', '$location', function($scope, $location)
 		{

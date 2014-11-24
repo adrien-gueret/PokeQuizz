@@ -21,6 +21,9 @@
 			{
 				var routes	=	['home', 'game', 'end'];
 				
+				//Exposte $controllerProvider for units testings
+				PokeQuizz.$controllerProvider	=	$controllerProvider;
+				
 				for(var i = 0, l = routes.length; i < l; i++)
 				{
 					(function(routeName)
@@ -43,8 +46,9 @@
 										{
 											loadedControllers[routeName]	=	true;
 											//Call function we've just loaded: it contains the new controller definition
-											window._controller($controllerProvider);
-											delete window._controller;
+											var ctrlNameProvider	=	'_controller_' + routeName + 'Ctrl';
+											window[ctrlNameProvider]($controllerProvider);
+											delete window[ctrlNameProvider];
 											
 											//All is ready, we can tell AngularJS it can proceeds routing
 											deferred.resolve();
