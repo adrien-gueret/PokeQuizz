@@ -1,11 +1,11 @@
-(function(window, angular)
+(function(window, angular, undefined)
 {
 	'use strict';
 	
 	var TOTAL_QUESTIONS	=	10;
-	
+		
 	//Define Game controller.
-	window._controller	=	function($controllerProvider)
+	window._controller_gameCtrl	=	function($controllerProvider)
 	{
 		$controllerProvider.register('gameCtrl', ['$scope', '$rootScope', '$timeout', '$location', 'PokeApi', '$i18n', function($scope, $rootScope, $timeout, $location, PokeApi, $i18n)
 		{
@@ -57,8 +57,11 @@
 			
 			$scope.checkType	=	function(type, $event)
 			{
-				$event.preventDefault();
-				$event.stopPropagation();
+				if($event)
+				{
+					$event.preventDefault();
+					$event.stopPropagation();
+				}
 				
 				if($scope.busy)
 					return;
@@ -67,7 +70,7 @@
 				
 				var	result,
 						highlight_class,
-						$element	=	angular.element($event.target);
+						$element	=	$event ? angular.element($event.target) : undefined;
 
 				if($scope.currentPokemon.types.length === 1)
 					result	=	$scope.currentPokemon.types[0].name.toLowerCase() === type;
@@ -79,13 +82,17 @@
 					
 				$scope.answers.push(result ? 1 : 0);
 				
-				highlight_class	=	'highlight_' + (result ? 'success' : 'wrong');
+				if($element)
+				{
+					highlight_class	=	'highlight_' + (result ? 'success' : 'wrong');
 				
-				$element.addClass(highlight_class);
+					$element.addClass(highlight_class);
+				}	
 				
 				$timeout(function()
 				{
-					$element.removeClass(highlight_class);
+					if($element)
+						$element.removeClass(highlight_class);
 					
 					if($scope.answers.length >= TOTAL_QUESTIONS)
 						$location.path('/end')
@@ -95,6 +102,7 @@
 				if($scope.answers.length < TOTAL_QUESTIONS)
 					$scope.loadPokemon();
 				
+				return result;
 			};
 			
 			PokeApi.types(function(types)
@@ -105,8 +113,6 @@
 						$scope.types.push(types[i].name.toLowerCase());
 				}
 			});
-			
-			$scope.loadPokemon();
 		}]);
 	};
 	
