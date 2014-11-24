@@ -1,6 +1,4 @@
-<pokemon
-		ng-show="currentPokemon.name"
-		pokemon="currentPokemon"></pokemon>
+<pokemon	pokemon="currentPokemon"></pokemon>
 
 <span ng-repeat="i in [0,0,0,0,0,0,0,0,0,0] track by $index" ng-bind-html="answers[$index] | pikachuIcon" ng-class="{current: answers.length === $index}"></span>
 		
